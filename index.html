@@ -10,7 +10,7 @@
 #pwgate .pwerr{color:#ff8095;font-weight:700;font-size:.9rem;margin-top:12px;min-height:1.2em}
 </style>
 <div id="pwgate"><div class="pwcard"><div class="pwlogo">💧</div><h2>Sr.&nbsp;Yara &middot; Classroom</h2><p>Please enter the class password to continue.</p><input id="pwin" type="password" placeholder="Password" autocomplete="off" autofocus><button id="pwbtn">Enter &rarr;</button><div class="pwerr" id="pwerr"></div></div></div>
-<script>(function(){var PW="yaralovesomar",g=document.getElementById("pwgate");function ok(){g.style.display="none";}try{if(sessionStorage.getItem("sy_ok")==="1")ok();}catch(e){}var inp=document.getElementById("pwin"),btn=document.getElementById("pwbtn"),err=document.getElementById("pwerr");function t(){if(inp.value===PW){try{sessionStorage.setItem("sy_ok","1")}catch(e){}ok();}else{err.textContent="Incorrect password, try again.";inp.value="";inp.focus();}}btn.onclick=t;inp.addEventListener("keydown",function(e){if(e.key==="Enter")t();});setTimeout(function(){inp.focus();},50);})();</script>
+<script>(function(){var PW="yara2005",g=document.getElementById("pwgate");function ok(){g.style.display="none";}try{if(sessionStorage.getItem("sy_ok2")==="1")ok();}catch(e){}var inp=document.getElementById("pwin"),btn=document.getElementById("pwbtn"),err=document.getElementById("pwerr");function t(){if(inp.value===PW){try{sessionStorage.setItem("sy_ok2","1")}catch(e){}ok();}else{err.textContent="Incorrect password, try again.";inp.value="";inp.focus();}}btn.onclick=t;inp.addEventListener("keydown",function(e){if(e.key==="Enter")t();});setTimeout(function(){inp.focus();},50);})();</script>
 
 <style>
 :root{
@@ -376,13 +376,13 @@ mark{background:linear-gradient(120deg,color-mix(in srgb,var(--amber) 42%,transp
 .notegrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
 @media(max-width:820px){.notegrid{grid-template-columns:1fr}}
 
-/* FIXES: grid overflow + bulletproof tap-to-reveal cards + clear quiz colours */
+/* FIXES: grid overflow + tap-to-reveal cards + quiz colours */
 .split>*,.g3>*,.notegrid>*,.stack{min-width:0}
 .fig img,.histfig img,.swap img,.stage img,.notecard img{max-width:100%;height:auto}
 .vflip,.sflip{cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-s);min-height:120px;height:auto!important;padding:16px;transition:transform .15s,border-color .15s,background .2s;perspective:none!important}
 .vflip:hover,.sflip:hover{border-color:var(--accent);transform:translateY(-2px)}
 .vin,.sflip-in{display:contents!important;transform:none!important;transition:none!important}
-.vf,.vb,.sf,.sb{position:static!important;inset:auto!important;background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;opacity:1!important;transform:none!important;-webkit-backface-visibility:visible;backface-visibility:visible}
+.vf,.vb,.sf,.sb{position:static!important;inset:auto!important;background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;opacity:1!important;transform:none!important;backface-visibility:visible}
 .vf,.sf{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:4px}
 .vf .t,.sf .nm{color:var(--accent)!important}
 .vb,.sb{display:none!important;margin-top:10px;text-align:left!important;align-items:flex-start!important}
@@ -487,10 +487,10 @@ mark{background:linear-gradient(120deg,color-mix(in srgb,var(--amber) 42%,transp
       <h2 data-reveal>Can it be replaced… or will it run out?</h2>
       <p class="lead" data-reveal>Guess for each one, then <b>tap the card</b> to flip it.</p>
       <div class="sortgrid" data-reveal style="margin-top:24px">
-        <div class="sflip" ><div class="sflip-in"><div class="sf"><span class="emo">☀️</span><span class="nm">Sunlight</span><span class="q">tap</span></div><div class="sb av">Renewable<span class="sub">nature replaces it</span></div></div></div>
-        <div class="sflip"><div class="sflip-in"><div class="sf"><span class="emo">🪨</span><span class="nm">Coal</span><span class="q">tap</span></div><div class="sb po">Non-renewable<span class="sub">it will run out</span></div></div></div>
-        <div class="sflip"><div class="sflip-in"><div class="sf"><span class="emo">💧</span><span class="nm">Water</span><span class="q">tap</span></div><div class="sb av">Renewable<span class="sub">the water cycle renews it</span></div></div></div>
-        <div class="sflip"><div class="sflip-in"><div class="sf"><span class="emo">🛢️</span><span class="nm">Oil</span><span class="q">tap</span></div><div class="sb po">Non-renewable<span class="sub">it will run out</span></div></div></div>
+        <div class="sflip" onclick="this.classList.toggle('on')" ><div class="sflip-in"><div class="sf"><span class="emo">☀️</span><span class="nm">Sunlight</span><span class="q">tap</span></div><div class="sb av">Renewable<span class="sub">nature replaces it</span></div></div></div>
+        <div class="sflip" onclick="this.classList.toggle('on')"><div class="sflip-in"><div class="sf"><span class="emo">🪨</span><span class="nm">Coal</span><span class="q">tap</span></div><div class="sb po">Non-renewable<span class="sub">it will run out</span></div></div></div>
+        <div class="sflip" onclick="this.classList.toggle('on')"><div class="sflip-in"><div class="sf"><span class="emo">💧</span><span class="nm">Water</span><span class="q">tap</span></div><div class="sb av">Renewable<span class="sub">the water cycle renews it</span></div></div></div>
+        <div class="sflip" onclick="this.classList.toggle('on')"><div class="sflip-in"><div class="sf"><span class="emo">🛢️</span><span class="nm">Oil</span><span class="q">tap</span></div><div class="sb po">Non-renewable<span class="sub">it will run out</span></div></div></div>
       </div>
     </div>
     <div class="wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path class="w2" d="M0,40 C240,80 480,0 720,40 C960,80 1200,10 1440,44 L1440,80 L0,80 Z"/><path d="M0,52 C240,90 480,20 720,52 C960,84 1200,28 1440,56 L1440,80 L0,80 Z"/></svg></div>
@@ -737,14 +737,14 @@ mark{background:linear-gradient(120deg,color-mix(in srgb,var(--amber) 42%,transp
       <div class="eyebrow" data-reveal style="justify-content:center;display:flex">Word wall · tap to flip</div>
       <h2 data-reveal style="text-align:center">Key vocabulary</h2>
       <div class="vgrid" data-reveal style="margin-top:24px">
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Resource</span><span class="h">tap</span></div><div class="vb">Anything we use to meet <b>needs &amp; wants</b>.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Renewable</span><span class="h">tap</span></div><div class="vb">Replenished as fast as we use it.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Non-renewable</span><span class="h">tap</span></div><div class="vb">Limited, <b>can't be replaced</b> once used.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Sustainability</span><span class="h">tap</span></div><div class="vb">Using resources so they <b>last</b> into the future.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Finite</span><span class="h">tap</span></div><div class="vb">A resource with a <b>limit</b> or end.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Infinite</span><span class="h">tap</span></div><div class="vb">A resource without limits (sun, wind).</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Interconnection</span><span class="h">tap</span></div><div class="vb">Links between places, people &amp; environments.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Water cycle</span><span class="h">tap</span></div><div class="vb">How water moves &amp; changes form on Earth.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Resource</span><span class="h">tap</span></div><div class="vb">Anything we use to meet <b>needs &amp; wants</b>.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Renewable</span><span class="h">tap</span></div><div class="vb">Replenished as fast as we use it.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Non-renewable</span><span class="h">tap</span></div><div class="vb">Limited, <b>can't be replaced</b> once used.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Sustainability</span><span class="h">tap</span></div><div class="vb">Using resources so they <b>last</b> into the future.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Finite</span><span class="h">tap</span></div><div class="vb">A resource with a <b>limit</b> or end.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Infinite</span><span class="h">tap</span></div><div class="vb">A resource without limits (sun, wind).</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Interconnection</span><span class="h">tap</span></div><div class="vb">Links between places, people &amp; environments.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Water cycle</span><span class="h">tap</span></div><div class="vb">How water moves &amp; changes form on Earth.</div></div></div>
       </div>
     </div>
     <div class="wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path class="w2" d="M0,40 C240,80 480,0 720,40 C960,80 1200,10 1440,44 L1440,80 L0,80 Z"/><path d="M0,52 C240,90 480,20 720,52 C960,84 1200,28 1440,56 L1440,80 L0,80 Z"/></svg></div>
@@ -820,12 +820,12 @@ mark{background:linear-gradient(120deg,color-mix(in srgb,var(--amber) 42%,transp
       <h2 data-reveal>Available or Potential?</h2>
       <p class="lead" data-reveal><span class="aqua">Available</span> water is easy &amp; cheap. <span class="och">Potential</span> water needs expensive tech. <b>Tap each card.</b></p>
       <div class="sortgrid" data-reveal style="margin-top:24px;grid-template-columns:repeat(3,1fr)">
-        <div class="sflip"><div class="sflip-in"><div class="sf"><span class="emo">💧</span><span class="nm">Rivers</span><span class="q">tap</span></div><div class="sb av">Available</div></div></div>
-        <div class="sflip"><div class="sflip-in"><div class="sf"><span class="emo">🏞️</span><span class="nm">Lakes</span><span class="q">tap</span></div><div class="sb av">Available</div></div></div>
-        <div class="sflip"><div class="sflip-in"><div class="sf"><span class="emo">⛰️</span><span class="nm">Groundwater</span><span class="q">tap</span></div><div class="sb av">Available</div></div></div>
-        <div class="sflip"><div class="sflip-in"><div class="sf"><span class="emo">🌊</span><span class="nm">Seawater</span><span class="q">tap</span></div><div class="sb po">Potential</div></div></div>
-        <div class="sflip"><div class="sflip-in"><div class="sf"><span class="emo">🧊</span><span class="nm">Ice</span><span class="q">tap</span></div><div class="sb po">Potential</div></div></div>
-        <div class="sflip"><div class="sflip-in"><div class="sf"><span class="emo">🚽</span><span class="nm">Wastewater</span><span class="q">tap</span></div><div class="sb po">Potential</div></div></div>
+        <div class="sflip" onclick="this.classList.toggle('on')"><div class="sflip-in"><div class="sf"><span class="emo">💧</span><span class="nm">Rivers</span><span class="q">tap</span></div><div class="sb av">Available</div></div></div>
+        <div class="sflip" onclick="this.classList.toggle('on')"><div class="sflip-in"><div class="sf"><span class="emo">🏞️</span><span class="nm">Lakes</span><span class="q">tap</span></div><div class="sb av">Available</div></div></div>
+        <div class="sflip" onclick="this.classList.toggle('on')"><div class="sflip-in"><div class="sf"><span class="emo">⛰️</span><span class="nm">Groundwater</span><span class="q">tap</span></div><div class="sb av">Available</div></div></div>
+        <div class="sflip" onclick="this.classList.toggle('on')"><div class="sflip-in"><div class="sf"><span class="emo">🌊</span><span class="nm">Seawater</span><span class="q">tap</span></div><div class="sb po">Potential</div></div></div>
+        <div class="sflip" onclick="this.classList.toggle('on')"><div class="sflip-in"><div class="sf"><span class="emo">🧊</span><span class="nm">Ice</span><span class="q">tap</span></div><div class="sb po">Potential</div></div></div>
+        <div class="sflip" onclick="this.classList.toggle('on')"><div class="sflip-in"><div class="sf"><span class="emo">🚽</span><span class="nm">Wastewater</span><span class="q">tap</span></div><div class="sb po">Potential</div></div></div>
       </div>
     </div>
     <div class="wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path class="w2" d="M0,40 C240,80 480,0 720,40 C960,80 1200,10 1440,44 L1440,80 L0,80 Z"/><path d="M0,52 C240,90 480,20 720,52 C960,84 1200,28 1440,56 L1440,80 L0,80 Z"/></svg></div>
@@ -982,14 +982,14 @@ mark{background:linear-gradient(120deg,color-mix(in srgb,var(--amber) 42%,transp
       <div class="eyebrow" data-reveal style="justify-content:center;display:flex">Word wall · tap to flip</div>
       <h2 data-reveal style="text-align:center">Key vocabulary</h2>
       <div class="vgrid" data-reveal style="margin-top:24px">
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Perennial</span><span class="h">tap</span></div><div class="vb">A river/lake with water <b>all year</b>.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Ephemeral</span><span class="h">tap</span></div><div class="vb">A source that <b>dries up</b> in dry seasons.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Aquifer</span><span class="h">tap</span></div><div class="vb"><b>Porous rock</b> that stores groundwater.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Bore</span><span class="h">tap</span></div><div class="vb">A hole drilled to <b>pump up</b> groundwater.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Potable</span><span class="h">tap</span></div><div class="vb">Water <b>safe to drink</b>.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Precipitation</span><span class="h">tap</span></div><div class="vb">Rain, snow, hail or sleet from clouds.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Drainage basin</span><span class="h">tap</span></div><div class="vb">Land that drains into <b>one river</b>.</div></div></div>
-        <div class="vflip"><div class="vin"><div class="vf"><span class="t">Monsoon</span><span class="h">tap</span></div><div class="vb">A <b>season of heavy rain</b> in the north.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Perennial</span><span class="h">tap</span></div><div class="vb">A river/lake with water <b>all year</b>.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Ephemeral</span><span class="h">tap</span></div><div class="vb">A source that <b>dries up</b> in dry seasons.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Aquifer</span><span class="h">tap</span></div><div class="vb"><b>Porous rock</b> that stores groundwater.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Bore</span><span class="h">tap</span></div><div class="vb">A hole drilled to <b>pump up</b> groundwater.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Potable</span><span class="h">tap</span></div><div class="vb">Water <b>safe to drink</b>.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Precipitation</span><span class="h">tap</span></div><div class="vb">Rain, snow, hail or sleet from clouds.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Drainage basin</span><span class="h">tap</span></div><div class="vb">Land that drains into <b>one river</b>.</div></div></div>
+        <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Monsoon</span><span class="h">tap</span></div><div class="vb">A <b>season of heavy rain</b> in the north.</div></div></div>
       </div>
     </div>
     <div class="wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path class="w2" d="M0,40 C240,80 480,0 720,40 C960,80 1200,10 1440,44 L1440,80 L0,80 Z"/><path d="M0,52 C240,90 480,20 720,52 C960,84 1200,28 1440,56 L1440,80 L0,80 Z"/></svg></div>
@@ -1162,14 +1162,14 @@ mark{background:linear-gradient(120deg,color-mix(in srgb,var(--amber) 42%,transp
     <div class="inner"><div class="eyebrow" data-reveal style="justify-content:center;display:flex">Word wall · tap to flip</div>
 <h2 data-reveal style="text-align:center">Key terms</h2>
 <div class="vgrid" data-reveal style="margin-top:24px">
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Anzac</span><span class="h">tap</span></div><div class="vb">Australian &amp; New Zealand Army Corps.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Significance</span><span class="h">tap</span></div><div class="vb">Why an event matters / led to change.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Casualty</span><span class="h">tap</span></div><div class="vb">A soldier killed, wounded or missing.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Silence ruse</span><span class="h">tap</span></div><div class="vb">The silent evacuation of Gallipoli.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Dardanelles</span><span class="h">tap</span></div><div class="vb">The sea passage the Allies tried to seize.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Diversion</span><span class="h">tap</span></div><div class="vb">A fake attack to confuse the enemy (Fromelles).</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Light Horse</span><span class="h">tap</span></div><div class="vb">Mounted infantry, rode to battle, fought on foot.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Primary source</span><span class="h">tap</span></div><div class="vb">Evidence made by someone who was there.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Anzac</span><span class="h">tap</span></div><div class="vb">Australian &amp; New Zealand Army Corps.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Significance</span><span class="h">tap</span></div><div class="vb">Why an event matters / led to change.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Casualty</span><span class="h">tap</span></div><div class="vb">A soldier killed, wounded or missing.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Silence ruse</span><span class="h">tap</span></div><div class="vb">The silent evacuation of Gallipoli.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Dardanelles</span><span class="h">tap</span></div><div class="vb">The sea passage the Allies tried to seize.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Diversion</span><span class="h">tap</span></div><div class="vb">A fake attack to confuse the enemy (Fromelles).</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Light Horse</span><span class="h">tap</span></div><div class="vb">Mounted infantry, rode to battle, fought on foot.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Primary source</span><span class="h">tap</span></div><div class="vb">Evidence made by someone who was there.</div></div></div>
 </div></div><div class="wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path class="w2" d="M0,40 C240,80 480,0 720,40 C960,80 1200,10 1440,44 L1440,80 L0,80 Z"/><path d="M0,52 C240,90 480,20 720,52 C960,84 1200,28 1440,56 L1440,80 L0,80 Z"/></svg></div>
   </section>
   <section class="sec" data-sec="Exit ticket" data-tint="0.5,0.4,0.24">
@@ -1308,14 +1308,14 @@ mark{background:linear-gradient(120deg,color-mix(in srgb,var(--amber) 42%,transp
     <div class="inner"><div class="eyebrow" data-reveal style="justify-content:center;display:flex">Word wall · tap to flip</div>
 <h2 data-reveal style="text-align:center">Key terms</h2>
 <div class="vgrid" data-reveal style="margin-top:24px">
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">No man's land</span><span class="h">tap</span></div><div class="vb">The deadly open ground between the trench lines.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Stalemate</span><span class="h">tap</span></div><div class="vb">Neither side can win, both dig in.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">War of attrition</span><span class="h">tap</span></div><div class="vb">Wearing the enemy down by killing as many as possible.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Total war</span><span class="h">tap</span></div><div class="vb">War that targets civilians &amp; whole economies.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Shell shock</span><span class="h">tap</span></div><div class="vb">Mental trauma from constant bombardment.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Armistice</span><span class="h">tap</span></div><div class="vb">An agreement to stop fighting (11 Nov 1918).</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Schlieffen Plan</span><span class="h">tap</span></div><div class="vb">Germany's plan to beat France before Russia was ready.</div></div></div>
-  <div class="vflip"><div class="vin"><div class="vf"><span class="t">Continuity &amp; change</span><span class="h">tap</span></div><div class="vb">What stays the same vs what changes over time.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">No man's land</span><span class="h">tap</span></div><div class="vb">The deadly open ground between the trench lines.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Stalemate</span><span class="h">tap</span></div><div class="vb">Neither side can win, both dig in.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">War of attrition</span><span class="h">tap</span></div><div class="vb">Wearing the enemy down by killing as many as possible.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Total war</span><span class="h">tap</span></div><div class="vb">War that targets civilians &amp; whole economies.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Shell shock</span><span class="h">tap</span></div><div class="vb">Mental trauma from constant bombardment.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Armistice</span><span class="h">tap</span></div><div class="vb">An agreement to stop fighting (11 Nov 1918).</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Schlieffen Plan</span><span class="h">tap</span></div><div class="vb">Germany's plan to beat France before Russia was ready.</div></div></div>
+  <div class="vflip" onclick="this.classList.toggle('on')"><div class="vin"><div class="vf"><span class="t">Continuity &amp; change</span><span class="h">tap</span></div><div class="vb">What stays the same vs what changes over time.</div></div></div>
 </div></div><div class="wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path class="w2" d="M0,40 C240,80 480,0 720,40 C960,80 1200,10 1440,44 L1440,80 L0,80 Z"/><path d="M0,52 C240,90 480,20 720,52 C960,84 1200,28 1440,56 L1440,80 L0,80 Z"/></svg></div>
   </section>
   <section class="sec" data-sec="Exit ticket" data-tint="0.5,0.4,0.23">
@@ -1436,7 +1436,7 @@ function countUp(el){if(el.dataset.d2)return;el.dataset.d2=1;var to=+el.dataset.
 
 /* reveal / flips / tilt */
 document.querySelectorAll('.rvbtn[data-rev]').forEach(function(b){var t=document.getElementById(b.dataset.rev);b.onclick=function(){if(!t)return;var o=t.classList.toggle('open');b.classList.toggle('done',o);};});
-document.querySelectorAll('.sflip.vflip').forEach(function(f){f.onclick=function(){f.classList.toggle('on');};});
+document.querySelectorAll('.sflip,.vflip').forEach(function(f){f.onclick=function(){f.classList.toggle('on');};});
 document.querySelectorAll('.stance').forEach(function(st){var j=st.parentNode.querySelector('.justify');
   st.querySelectorAll('button').forEach(function(b){b.onclick=function(){st.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');if(j)j.classList.add('show');};});});
 if(!reduce){document.querySelectorAll('.tilt').forEach(function(el){
