@@ -376,12 +376,16 @@ mark{background:linear-gradient(120deg,color-mix(in srgb,var(--amber) 42%,transp
 .notegrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
 @media(max-width:820px){.notegrid{grid-template-columns:1fr}}
 
-/* layout + 3D flip fixes */
+/* fixes: grid overflow + robust crossfade flip cards (no 3D mirroring) */
 .split>*,.g3>*,.notegrid>*,.stack{min-width:0}
 .fig img,.histfig img,.swap img,.stage img,.notecard img{max-width:100%;height:auto}
-.vf,.vb,.sf,.sb{-webkit-backface-visibility:hidden;backface-visibility:hidden}
-.vin,.sflip-in{-webkit-transform-style:preserve-3d;transform-style:preserve-3d}
-.vgrid,.sortgrid,.vflip,.sflip{filter:none!important}
+.vflip,.sflip{position:relative}
+.vin,.sflip-in{position:absolute!important;inset:0!important;transform:none!important;transition:none!important;transform-style:flat}
+.vf,.vb,.sf,.sb{position:absolute;inset:0;transform:none!important;-webkit-backface-visibility:visible;backface-visibility:visible;transition:opacity .3s ease}
+.vf,.sf{opacity:1}
+.vb,.sb{opacity:0}
+.vflip.on .vf,.sflip.on .sf{opacity:0}
+.vflip.on .vb,.sflip.on .sb{opacity:1}
 </style>
 
 <div class="ambient"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
